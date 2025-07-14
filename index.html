@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Sensitivity Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Mouse Sensitivity Calculator</h1>
+        <div class="content">
+            <div class="inputs">
+                <label for="origin-game">Origin Game:</label>
+                <select id="origin-game" onchange="calculateSensitivity()"></select>
+
+                <label for="target-game">Target Game:</label>
+                <select id="target-game" onchange="calculateSensitivity()"></select>
+
+                <label for="origin-sensitivity">Input Game Sensitivity:</label>
+                <input type="number" id="origin-sensitivity" oninput="calculateSensitivity()" placeholder="Origin Game Sensitivity">
+
+                <label for="dpi">Mouse DPI:</label>
+                <input type="number" id="dpi" value="800" oninput="calculateSensitivity()">
+            </div>
+            <div class="outputs">
+                <h2>Results:</h2>
+                <label>Game Sensitivity:</label>
+                <input type="text" id="target-sensitivity" value="0" disabled>
+					 
+                <label>In/360:</label>
+					 <span class="tooltip-icon">
+						&#x26A0;
+						<span class="tooltip-text">Mouse movement required to rotate 360°</span>
+				    </span>
+                <input type="text" id="in-per-360" value="0" disabled>
+
+                <label>Cm/360:</label>
+					 <span class="tooltip-icon">
+						&#x26A0;
+						<span class="tooltip-text">Mouse movement required to rotate 360°</span>
+				    </span>
+                <input type="text" id="cm-per-360" value="0" disabled>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
